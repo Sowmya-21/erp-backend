@@ -81,17 +81,3 @@ APIs tested using **Postman / Hoppscotch**
 git clone https://github.com/your-username/erp-backend.git
 cd erp-backend
 mvn spring-boot:run
-
-## 📌 Future Improvements
-
-Add React frontend dashboard
-
-Dockerize application
-
-Add caching (Redis)
-
-Deploy on cloud (AWS)
-
-## 👩‍💻 Author
-
-Sowmya Kanaparthi

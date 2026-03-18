@@ -1,83 +1,149 @@
-# 🚀 ERP System for Inventory & Sales Management
+# 🚀 ERP Backend System (Spring Boot)
 
-A full-stack Enterprise Resource Planning (ERP) backend system built using **Spring Boot**.  
-This system manages products, customers, orders, inventory, suppliers, and invoices with secure authentication.
-
----
-
-## 🔥 Features
-
-- 📦 Product Management (CRUD)
-- 👤 Customer Management
-- 🛒 Sales Order Processing
-- 📉 Inventory Management (Auto stock update)
-- 🧾 Invoice Generation
-- 🚚 Supplier & Purchase Order Flow (GRN)
-- 🔐 JWT Authentication & Role-Based Access Control
-- ⚠️ Global Exception Handling
+A full-featured **ERP (Enterprise Resource Planning) backend system** built using **Spring Boot**, supporting inventory management, sales, purchase orders, and secure authentication using JWT.
 
 ---
 
-## 🏗️ System Design Highlights
+## 📌 Features
 
-- Layered Architecture (Controller → Service → Repository)
-- RESTful APIs
-- Transaction Management using `@Transactional`
-- Database: PostgreSQL
-- Authentication: JWT (Stateless)
-- Role-Based Authorization (ADMIN / USER)
-
----
-
-## 🔐 Authentication
-
-- Register/Login API
-- JWT Token-based authentication
-- Secure endpoints using Spring Security
+* 🔐 JWT Authentication & Role-Based Access (ADMIN / USER)
+* 👥 Customer & Supplier Management
+* 📦 Product & Inventory Management
+* 🛒 Sales Order Processing
+* 📥 Purchase Order & GRN (Goods Received Note)
+* 🧾 Invoice Generation
+* ⚡ Transaction Management (Stock updates automatically)
+* ❌ Global Exception Handling
 
 ---
 
-## 📡 API Endpoints (Sample)
+## 🛠️ Tech Stack
 
-### Auth
-- `POST /api/auth/register`
-- `POST /api/auth/login`
-
-### Products
-- `GET /api/products`
-- `POST /api/products`
-
-### Orders
-- `POST /api/orders`
-- `GET /api/orders`
-
-### Purchase / GRN
-- `POST /api/purchase-orders`
-- `POST /api/grns/{id}`
+* **Backend:** Spring Boot, Spring Security, Spring Data JPA
+* **Database:** PostgreSQL
+* **Authentication:** JWT (JSON Web Token)
+* **Build Tool:** Maven
+* **Testing:** Postman / Hoppscotch
 
 ---
 
-## 🧪 Testing
+## 🔐 Authentication Flow
 
-APIs tested using **Postman / Hoppscotch**
+1. Register user
+2. Login → Get JWT Token
+3. Use token in headers for protected APIs
 
----
-
-## ⚙️ Tech Stack
-
-- Java 17
-- Spring Boot
-- Spring Security
-- Spring Data JPA
-- PostgreSQL
-- Lombok
-- Maven
+```http
+Authorization: Bearer <your_token>
+```
 
 ---
 
-## 🚀 How to Run
+## 📸 API Demonstration
+
+### 🔐 User Registration
+
+![Auth](screenshots/auth-register.png)
+
+---
+
+### 📦 Supplier Creation
+
+![Supplier](screenshots/supplier-api.png)
+
+---
+
+### 🛒 Purchase Order Creation
+
+![Purchase Order](screenshots/purchase-order-api.png)
+
+---
+
+### 📉 Inventory Update (GRN)
+
+![GRN](screenshots/grn-inventory-update.png)
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+ ├── controller
+ ├── service
+ ├── repository
+ ├── model
+ ├── config
+ ├── security
+ └── exception
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone the repository
 
 ```bash
 git clone https://github.com/your-username/erp-backend.git
 cd erp-backend
+```
+
+### 2️⃣ Configure database (application.properties)
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/erp_db
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+
+spring.jpa.hibernate.ddl-auto=update
+```
+
+### 3️⃣ Run the application
+
+```bash
 mvn spring-boot:run
+```
+
+---
+
+## 🧪 API Testing
+
+Use:
+
+* Postman
+* Hoppscotch
+
+Test flow:
+
+1. Register → `/api/auth/register`
+2. Login → `/api/auth/login`
+3. Copy JWT token
+4. Add header:
+
+   ```
+   Authorization: Bearer <token>
+   ```
+5. Access protected APIs
+
+---
+
+## 🚀 Future Improvements
+
+* Frontend integration (React)
+* Swagger API Documentation
+* Docker Deployment
+* Advanced Reporting Dashboard
+
+---
+
+## 👩‍💻 Author
+
+**Sowmya Kanaparthi**
+B.Tech IT | Backend Developer | Spring Boot Enthusiast
+
+---
+
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub!

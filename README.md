@@ -82,7 +82,7 @@ git clone https://github.com/your-username/erp-backend.git
 cd erp-backend
 mvn spring-boot:run
 
-📌 Future Improvements
+## 📌 Future Improvements
 
 Add React frontend dashboard
 
@@ -92,6 +92,6 @@ Add caching (Redis)
 
 Deploy on cloud (AWS)
 
-👩‍💻 Author
+## 👩‍💻 Author
 
 Sowmya Kanaparthi
